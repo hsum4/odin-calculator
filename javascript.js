@@ -14,3 +14,8 @@ function substract (firstNum, secondNum){
 function multiply (firstNum, secondNum){
     return firstNum * secondNum;
 }
+
+//divide function
+function divide (firstNum, secondNum){
+    return firstNum / secondNum;
+}
