@@ -1,5 +1,6 @@
-// functions
 
+
+// functions
 //add function
 function add (firstNum, secondNum){
     return firstNum + secondNum;
@@ -18,4 +19,18 @@ function multiply (firstNum, secondNum){
 //divide function
 function divide (firstNum, secondNum){
     return firstNum / secondNum;
+}
+
+//operator function
+function operator (operator, firstNum, secondNum) {
+    switch (operator) {
+        case "+":
+            return add(firstNum, secondNum)
+        case "-":
+            return substract(firstNum, secondNum)
+        case "*":
+            return multiply(firstNum, secondNum)
+        case "/":
+            return diivide(firstNum, secondNum)
+    }
 }
