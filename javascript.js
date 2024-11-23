@@ -9,3 +9,8 @@ function add (firstNum, secondNum){
 function substract (firstNum, secondNum){
     return firstNum - secondNum;
 }
+
+//multiply function
+function multiply (firstNum, secondNum){
+    return firstNum * secondNum;
+}
