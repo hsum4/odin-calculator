@@ -1,0 +1,52 @@
+#main {
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    min-height: 95vh;
+    justify-content: center;
+    align-items: center;}
+
+#container {
+    background-color: grey;
+    border: 4px solid black;
+    border-radius: 8px;
+    padding: 14px;
+    padding-bottom: 0px;
+    width: 400px;
+}
+
+#display{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 60px;
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+.btn-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.button {
+    flex: 1;
+    border: 3px solid black;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 14px;
+}
+
+#clear, #backspace {
+    background-color: dodgerblue;
+}
+
+#add, #multiply, #divide, #substract {
+    background-color: orange;
+}
+
+#equal {
+    background-color:lightseagreen;
+}
