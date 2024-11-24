@@ -1,4 +1,27 @@
+let firNum;
+let secNum;
+let operatorSign;
 
+const display = document.querySelector("#display");
+const clearBtn = document.querySelector("#clear");
+const backBtn = document.querySelector("#backspace");
+const digitBtns = document.querySelectorAll(".digit");
+const operatorBtns = document.querySelectorAll(".operator");
+
+digitBtns.forEach(button => {
+    button.addEventListener("click", () => {
+        const digit = button.textContent;
+        display.textContent = display.textContent === "0" ? digit : display.textContent + digit;
+    });
+});
+
+operatorBtns.forEach(button => {
+    button.addEventListener("click", () => {
+        firNum = parseFloat(display.textContent);
+        operatorSign = button.textContent;
+        display.textContent = "0";
+    });
+});
 
 // functions
 //add function
