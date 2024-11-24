@@ -14,7 +14,7 @@ digitBtns.forEach(button => {
         const digit = button.textContent;
         display.textContent = display.textContent === "0" ? digit : display.textContent + digit;
     });
-});
+})
 
 operatorBtns.forEach(button => {
     button.addEventListener("click", () => {
@@ -22,12 +22,19 @@ operatorBtns.forEach(button => {
         operatorSign = button.textContent;
         display.textContent = "0";
     });
-});
+})
 
 equalBtn.addEventListener("click", () => {
     secNum = parseFloat(display.textContent);
-    let result = operator(operatorSign, firNum, secNum);
+    let result = parseFloat(operator(operatorSign, firNum, secNum));
     display.textContent = result;
+})
+
+clearBtn.addEventListener("click", () => {
+    firNum = "";
+    secNum = "";
+    operatorSign = "";
+    display.textContent = "0";
 })
 
 // functions
