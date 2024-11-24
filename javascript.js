@@ -37,6 +37,10 @@ clearBtn.addEventListener("click", () => {
     display.textContent = "0";
 })
 
+backBtn.addEventListener("click", () => {
+    display.textContent = display.textContent.slice(0, -1) || "0";
+})
+
 // functions
 //add function
 function add (firstNum, secondNum){
