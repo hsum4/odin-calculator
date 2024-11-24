@@ -5,6 +5,7 @@ let operatorSign;
 const display = document.querySelector("#display");
 const clearBtn = document.querySelector("#clear");
 const backBtn = document.querySelector("#backspace");
+const equalBtn = document.querySelector("#equal");
 const digitBtns = document.querySelectorAll(".digit");
 const operatorBtns = document.querySelectorAll(".operator");
 
@@ -22,6 +23,12 @@ operatorBtns.forEach(button => {
         display.textContent = "0";
     });
 });
+
+equalBtn.addEventListener("click", () => {
+    secNum = parseFloat(display.textContent);
+    let result = operator(operatorSign, firNum, secNum);
+    display.textContent = result;
+})
 
 // functions
 //add function
