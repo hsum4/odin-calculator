@@ -45,6 +45,12 @@ equalBtn.addEventListener("click", () => {
 
     secNum = parseFloat(display.textContent);
 
+    if (operatorSign === "/" && secNum === 0){
+        display.textContent = "-_-";
+        hasComputed = true;
+        return;
+    }
+
     let result = parseFloat(operator(operatorSign, firNum, secNum));
     display.textContent = Math.round(result * 1000000) / 1000000;
     
