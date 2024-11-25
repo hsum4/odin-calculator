@@ -52,7 +52,7 @@ equalBtn.addEventListener("click", () => {
     }
 
     let result = parseFloat(operator(operatorSign, firNum, secNum));
-    display.textContent = Math.round(result * 1000000) / 1000000;
+    display.textContent = Math.round(result * 100) / 100;
     
     hasComputed = true;
 })
