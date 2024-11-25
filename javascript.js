@@ -9,6 +9,7 @@ const backBtn = document.querySelector("#backspace");
 const equalBtn = document.querySelector("#equal");
 const digitBtns = document.querySelectorAll(".digit");
 const operatorBtns = document.querySelectorAll(".operator");
+const decimalBtn = document.querySelector("#decimal");
 
 digitBtns.forEach(button => {
     button.addEventListener("click", () => {
@@ -64,6 +65,12 @@ clearBtn.addEventListener("click", () => {
     operatorSign = "";
     display.textContent = "0";
 })
+
+decimalBtn.addEventListener("click", () => {
+    if (!display.textContent.includes(".")){
+        display.textContent = display.textContent + decimalBtn.textContent;
+    };
+}) 
 
 backBtn.addEventListener("click", () => {
     display.textContent = display.textContent.slice(0, -1) || "0";
