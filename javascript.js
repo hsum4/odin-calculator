@@ -1,6 +1,7 @@
 let firNum;
 let secNum;
 let operatorSign;
+let hasComputed = false;
 
 const display = document.querySelector("#display");
 const clearBtn = document.querySelector("#clear");
@@ -11,6 +12,10 @@ const operatorBtns = document.querySelectorAll(".operator");
 
 digitBtns.forEach(button => {
     button.addEventListener("click", () => {
+        if (hasComputed){
+            display.textContent = "0";
+            hasComputed = false;
+        }
         const digit = button.textContent;
         display.textContent = display.textContent === "0" ? digit : display.textContent + digit;
     });
@@ -18,19 +23,36 @@ digitBtns.forEach(button => {
 
 operatorBtns.forEach(button => {
     button.addEventListener("click", () => {
-        firNum = parseFloat(display.textContent);
+        if (hasComputed){
+            firNum = parseFloat(display.textContent);
+            hasComputed = false;
+        }
+        else {
+            firNum = parseFloat(display.textContent);
+        }
         operatorSign = button.textContent;
         display.textContent = "0";
     });
 })
 
 equalBtn.addEventListener("click", () => {
+    if (hasComputed) return;
+
+    if (!operatorSign || firNum === null) {
+        display.textContent = "Error";
+        return;
+    }
+
     secNum = parseFloat(display.textContent);
+
     let result = parseFloat(operator(operatorSign, firNum, secNum));
-    display.textContent = result;
+    display.textContent = Math.round(result * 1000000) / 1000000;
+    
+    hasComputed = true;
 })
 
 clearBtn.addEventListener("click", () => {
+    hasComputed = false;
     firNum = "";
     secNum = "";
     operatorSign = "";
@@ -72,6 +94,6 @@ function operator (operator, firstNum, secondNum) {
         case "*":
             return multiply(firstNum, secondNum)
         case "/":
-            return diivide(firstNum, secondNum)
+            return divide(firstNum, secondNum)
     }
 }
